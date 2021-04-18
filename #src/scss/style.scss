@@ -1,0 +1,31 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+    url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+@import "fonts/fonts";
+
+
+@import "base/nullstyle";
+@import "base/vars";
+body {
+  background-color: $cWhite;
+  font-size: 14px;
+  line-height: 1.6;
+  font-family: $fontFamily, sans-serif;
+  font-weight: 400;
+  color: $cWhite;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+}
+
+@import "global/header";
+
+
+@import "global/footer";
